@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="indi.cc.mobilesafe"
+    android:versionCode="1"
+    android:versionName="1.0" >
+<!-- android:versionCode 本地应用版本号1,版本号是2,有必要提示用户更新 -->
+	<!-- android:versionName="1.0"  
+			2.1.1:
+			最后的一位:代表修复原有版本的bug
+			倒数第二位:更新部分功能
+			第一位:项目重大更新(代码重构,大部分功能添加,界面整体修改)-->
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="21" />
+    
+<!-- android:theme="@android:style/Theme.Light.NoTitleBar"  修改主题-->
+<!-- 如果只是为了去掉标题，还保留高版本的样式主题，直接进入 android:theme="@style/AppTheme修改 -->
+ <uses-permission android:name="android.permission.INTERNET"/>
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> 
+	
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/mobilesafe"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".SplashActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="indi.cc.mobilesafe.HomeActivity"></activity>
+    </application>
+
+</manifest>
