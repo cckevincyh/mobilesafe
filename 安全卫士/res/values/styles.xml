@@ -18,5 +18,24 @@
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
         <item name="android:windowNoTitle">true</item>
     </style>
-
+    
+ <!-- <TextView 
+        android:text="功能列表"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:textColor="#000"
+        android:padding="10dp"
+        android:background="#0f0"
+        android:layout_width="match_parent"
+    	android:layout_height="wrap_content"/> --> 
+    <style name="TitleStyle">
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#000</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:background">#0f0</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    
 </resources>

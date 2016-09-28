@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/launcher_bg" 
+        android:id="@+id/rl_root"
     >
     <!-- android:shadowRadius="5"阴影所在范围 -->
     <!-- 

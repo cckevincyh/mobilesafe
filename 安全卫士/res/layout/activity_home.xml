@@ -1,16 +1,53 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="indi.cc.mobilesafe.HomeActivity" >
-
+    tools:context="indi.cc.mobilesafe.activity.HomeActivity" 
+    android:orientation="vertical">
+    
+ <!-- 将对应属性抽取到样式中去 -->
+   <TextView
+        style="@style/TitleStyle"
+        android:text="功能列表" />
+   
+     <!-- android:ellipsize="end"添加省略点的所在位置 -->
+    <!-- 想让文字出现跑马灯效果,必须让其获取焦点 -->
+    <!-- android:marqueeRepeatLimit="marquee_forever"一直滚动属性 -->
+    <!-- 自定义控件达到滚动效果(其实就是重新原有的TextView,让其一直能够获取焦点即可) -->
+   
+  <!--
     <TextView
+        android:text="秋天秋天悄悄过去,留下小秘密,啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊"
+       	android:textColor="#000"
+       	android:singleLine="true"
+       	android:padding="5dp"
+       	android:ellipsize="marquee"
+       	android:focusable="true"
+       	android:marqueeRepeatLimit="marquee_forever"
+       	android:focusableInTouchMode="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
-
-</RelativeLayout>
+      />
+  -->  
+  
+    <indi.cc.mobilesafe.view.FocusTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:padding="5dp"
+        android:singleLine="true"
+        android:text="秋天秋天悄悄过去,留下小秘密,啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊"
+        android:textColor="#000" >
+   </indi.cc.mobilesafe.view.FocusTextView>
+ 
+    <!-- 九宫格 -->
+    <!-- 使用方式和 ListView差不多-->
+   <GridView
+        android:id="@+id/gv_home"
+        android:numColumns="3"
+        android:verticalSpacing="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    </GridView>
+</LinearLayout>
