@@ -38,4 +38,34 @@
         <item name="android:layout_height">wrap_content</item>
     </style>
     
+    
+     <!-- <Button
+	   	    android:text="下一页"
+	   	    android:onClick="nextPage"
+	   	    android:layout_alignParentRight="true"
+	   	    android:layout_alignParentBottom="true"
+	   	    android:drawableRight="@drawable/next"
+	   	    android:background="@drawable/selector_next_btn_bg"
+	   	    android:layout_width="wrap_content"
+	   	    android:layout_height="wrap_content"/> -->
+	<style	name="preBtn">
+	    <item name="android:text">上一页</item>
+        <item name="android:onClick">prePage</item><!-- 触发事件 -->
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:drawableLeft">@drawable/previous</item>
+        <item name="android:background">@drawable/selector_next_btn_bg</item><!-- 在drawable目录下编辑上一页图片按钮选择器 -->
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+	</style>
+	<style	name="nextBtn">
+	    <item name="android:text">下一页</item>
+        <item name="android:onClick">nextPage</item><!-- 触发事件 -->
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:drawableRight">@drawable/next</item>
+        <item name="android:background">@drawable/selector_next_btn_bg</item><!-- 在drawable目录下编辑下一页图片按钮选择器 -->
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+	</style>
 </resources>
