@@ -15,10 +15,13 @@
     
 <!-- android:theme="@android:style/Theme.Light.NoTitleBar"  修改主题-->
 <!-- 如果只是为了去掉标题，还保留高版本的样式主题，直接进入 android:theme="@style/AppTheme修改 -->
-  <uses-permission android:name="android.permission.INTERNET"/>
+ <uses-permission android:name="android.permission.INTERNET"/>
 	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 	<uses-permission android:name="android.permission.READ_PHONE_STATE"/>
 	<uses-permission android:name="android.permission.READ_CONTACTS"/> 
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+	<uses-permission android:name="android.permission.SEND_SMS"/> 
+	
     <application
         android:allowBackup="true"
         android:icon="@drawable/mobilesafe"
@@ -42,6 +45,13 @@
        	<activity android:name="indi.cc.mobilesafe.activity.Setup3Activity"></activity>
        	<activity android:name="indi.cc.mobilesafe.activity.ContactListActivity"></activity>
        	<activity android:name="indi.cc.mobilesafe.activity.Setup4Activity"></activity>
-    </application>
+
+       	<receiver android:name="indi.cc.mobilesafe.receiver.BootReceiver">
+       	    <intent-filter >
+       	           <action android:name="android.intent.action.BOOT_COMPLETED"/>	        
+       	    </intent-filter>
+       	</receiver>
+     	  	
+     </application>
 
 </manifest>
