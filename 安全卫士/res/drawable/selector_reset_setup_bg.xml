@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" >
+    <!-- 自己通过xml绘制出来的带圆角背景的图片 -->
+    <item android:state_pressed="true" android:drawable="@drawable/reset_setup_bg_press"/>
+    <!-- 使用android透明色 -->
+	<item android:drawable="@android:color/transparent"/>
+</selector>

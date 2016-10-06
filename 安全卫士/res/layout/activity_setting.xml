@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+ <TextView 
+        style="@style/TitleStyle"
+        android:text="设置中心"/>
+    <!-- 将以下的相对布局,抽取到单独的一个类中去做管理,以后只需要在布局文件中添加此类,即可达到以下效果-->
+   <!--  
+     <RelativeLayout 
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView 
+            android:id="@+id/tv_title"
+            android:text="自动更新设置"
+            android:textColor="#000"
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView 
+            android:id="@+id/tv_des"
+            android:layout_below="@id/tv_title"
+            android:text="自动更新已关闭"
+            android:textColor="#000"
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <CheckBox 
+            android:id="@+id/cb_box"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <View
+            android:background="#000"
+            android:layout_below="@id/tv_des"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+    </RelativeLayout>
+    -->
+    <indi.cc.mobilesafe.view.SettingItemView
+	    xmlns:mobilesafe="http://schemas.android.com/apk/res/indi.cc.mobilesafe"
+	    android:id="@+id/siv_update"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    mobilesafe:destitle="自动更新设置"
+	    mobilesafe:desoff="自动更新已关闭"
+	    mobilesafe:deson="自动更新已开启">
+	</indi.cc.mobilesafe.view.SettingItemView>
+	
+    
+    <!-- 
+    <indi.cc.mobilesafe.view.SettingItemView
+	    xmlns:mobilesafe="http://schemas.android.com/apk/res/indi.cc.mobilesafe"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    mobilesafe:destitle="电话归属地的显示设置"
+	    mobilesafe:desoff="归属地的显示已关闭"
+	    mobilesafe:deson="归属地的显示已开启">
+	</indi.cc.mobilesafe.view.SettingItemView>
+	
+	 -->
+	<!-- SettingItemView需要在构建布局的时候指定title和des字符串内容 -->
+	<!-- 自定义属性 -->
+	<!-- 
+	
+	<indi.cc.mobilesafe.view.SettingItemView
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content">
+	</indi.cc.mobilesafe.view.SettingItemVieww>
+	
+	 -->
+    
+</LinearLayout>

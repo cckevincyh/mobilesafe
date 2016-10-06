@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+     <TextView
+	    style="@style/TitleStyle"
+	    android:text="4,恭喜您,设置完成"/>
+	 <CheckBox 
+	     android:id="@+id/cb_box"
+	     android:text="您没有开启防盗保护"
+	     android:layout_width="wrap_content"
+	     android:layout_height="wrap_content"/>
+	 <!-- 让内部点的控件水平居中 -->
+	<LinearLayout 
+	    android:gravity="center_horizontal"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content">
+	    <ImageView 
+	        android:background="@android:drawable/presence_invisible"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"/>
+	    
+	    <ImageView 
+	        android:background="@android:drawable/presence_invisible"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"/>
+	    <ImageView 
+	        android:background="@android:drawable/presence_invisible"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"/>
+	     <ImageView 
+	        android:background="@android:drawable/presence_online"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"/>
+	</LinearLayout>
+	<RelativeLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent">
+	    <ImageView
+	        android:background="@drawable/phone"
+	        android:layout_centerInParent="true"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"/>
+	    <!-- 图片选择器,在选中和未选中的过程中,切换展示图片 -->
+	   	<Button
+	   	    style="@style/preBtn"/>
+	   	<Button
+	   	    style="@style/nextBtn"/>
+	</RelativeLayout>
+
+</LinearLayout>
