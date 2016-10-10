@@ -3,8 +3,10 @@ package indi.cc.mobilesafe.activity;
 import indi.cc.mobilesafe.R;
 import indi.cc.mobilesafe.engine.AddressDao;
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Vibrator;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -66,8 +68,14 @@ public class QueryAddressActivity extends Activity {
 					
 //					Interpolator
 //					CycleInterpolator
-					
+					//输入框抖动
 					et_phone.startAnimation(shake);
+					//手机震动效果(vibrator 震动)
+					Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+					//震动毫秒值
+					vibrator.vibrate(2000);
+					//规律震动(震动规则(不震动时间,震动时间,不震动时间,震动时间.......),重复次数)
+					vibrator.vibrate(new long[]{2000,5000,2000,5000}, -1);
 				}
 				
 			}

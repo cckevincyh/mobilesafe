@@ -25,7 +25,8 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- //获取准确GPS坐标的权限 -->
     <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" /> <!-- //允许模拟器模拟位置坐标的权限 -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- //获取粗略坐标的权限(网络定位时使用) -->
-
+    <!-- 在窗体上挂在view的权限 -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
     <application
         android:allowBackup="true"
         android:icon="@drawable/mobilesafe"
@@ -51,6 +52,8 @@
        	<activity android:name="indi.cc.mobilesafe.activity.Setup4Activity"></activity>
 		<activity android:name="indi.cc.mobilesafe.activity.AToolActivity"></activity>
 		<activity android:name="indi.cc.mobilesafe.activity.QueryAddressActivity"></activity>
+		<activity android:name="indi.cc.mobilesafe.activity.ToastLocationActivity" 
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
        	<receiver android:name="indi.cc.mobilesafe.receiver.BootReceiver">
        	    <intent-filter >
        	           <action android:name="android.intent.action.BOOT_COMPLETED"/>	        
@@ -66,8 +69,8 @@
        	</receiver>
      	 
        	<service android:name="indi.cc.mobilesafe.service.LocationService"></service>
-       	
-      
+       	<service android:name="indi.cc.mobilesafe.service.AddressService"></service>
+     
      </application>
 
 </manifest>

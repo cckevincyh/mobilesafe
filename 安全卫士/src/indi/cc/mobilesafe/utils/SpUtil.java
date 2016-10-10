@@ -34,7 +34,7 @@ public class SpUtil {
 	}
 	
 	/**
-	 * 写入boolean变量至sp中
+	 * 写入String变量至sp中
 	 * @param ctx	上下文环境
 	 * @param key	存储节点名称
 	 * @param value	存储节点的值string
@@ -47,7 +47,7 @@ public class SpUtil {
 		sp.edit().putString(key, value).commit();
 	}
 	/**
-	 * 读取boolean标示从sp中
+	 * 读取String标示从sp中
 	 * @param ctx	上下文环境
 	 * @param key	存储节点名称
 	 * @param defValue	没有此节点默认值
@@ -59,6 +59,35 @@ public class SpUtil {
 			sp = ctx.getSharedPreferences("config", Context.MODE_PRIVATE);
 		}
 		return sp.getString(key, defValue);
+	}
+	
+	
+	/**
+	 * 写入int变量至sp中
+	 * @param ctx	上下文环境
+	 * @param key	存储节点名称
+	 * @param value	存储节点的值string
+	 */
+	public static void putInt(Context ctx,String key,int value){
+		//(存储节点文件名称,读写方式)
+		if(sp == null){
+			sp = ctx.getSharedPreferences("config", Context.MODE_PRIVATE);
+		}
+		sp.edit().putInt(key, value).commit();
+	}
+	/**
+	 * 读取int标示从sp中
+	 * @param ctx	上下文环境
+	 * @param key	存储节点名称
+	 * @param defValue	没有此节点默认值
+	 * @return		默认值或者此节点读取到的结果
+	 */
+	public static int getInt(Context ctx,String key,int defValue){
+		//(存储节点文件名称,读写方式)
+		if(sp == null){
+			sp = ctx.getSharedPreferences("config", Context.MODE_PRIVATE);
+		}
+		return sp.getInt(key, defValue);
 	}
 	
 	/**

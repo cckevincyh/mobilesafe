@@ -30,5 +30,19 @@ public class ConstantValue {
 	 * 是否开启防盗保护key,总开关
 	 */
 	public static final String OPEN_SECURITY = "open_security";
+	
+	/**
+	 * 吐司选择样式索引所在key
+	 */
+	public static final String TOAST_STYLE = "toast_style";
+
+	/**
+	 * 左上角的x轴的坐标key
+	 */
+	public static final String LOCATION_X = "location_x";
+	/**
+	 * 左上角的y轴的坐标key
+	 */
+	public static final String LOCATION_Y = "location_y";
 
 }
