@@ -40,6 +40,14 @@
 	    android:layout_height="wrap_content">
 	</indi.cc.mobilesafe.view.SettingClickView>
 	
-	
+	<indi.cc.mobilesafe.view.SettingItemView
+	    xmlns:mobilesafe="http://schemas.android.com/apk/res/indi.cc.mobilesafe"
+	    android:id="@+id/siv_blacknumber"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    mobilesafe:destitle="黑名单拦截设置"
+	    mobilesafe:desoff="黑名单拦截已关闭"
+	    mobilesafe:deson="黑名单拦截已开启">
+	</indi.cc.mobilesafe.view.SettingItemView>
     
 </LinearLayout>
