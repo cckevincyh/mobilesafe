@@ -17,4 +17,20 @@
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content">
 	</TextView>
+	<TextView
+	    android:id="@+id/tv_sms_backup"
+	    android:padding="5dp"
+	    android:text="短信备份"
+	    android:gravity="center"
+	    android:textSize="18sp"
+	    android:drawableLeft="@android:drawable/btn_star"
+	    android:background="@drawable/selector_atool_item_bg"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content">
+	</TextView>
+	<ProgressBar 
+	    android:id="@+id/pb_bar"
+	    style="@android:style/Widget.ProgressBar.Horizontal"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"/>
 </LinearLayout>

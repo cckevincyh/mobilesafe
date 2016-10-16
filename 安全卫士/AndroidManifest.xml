@@ -35,6 +35,10 @@
     <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/>
     <!-- 拦截电话需要用到的权限 -->
     <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.READ_CALL_LOG"/>
+    <uses-permission android:name="android.permission.WRITE_CALL_LOG"/>
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.WRITE_SMS"/>
     
     <application
         android:allowBackup="true"
@@ -65,6 +69,7 @@
 		<activity android:name="indi.cc.mobilesafe.activity.ToastLocationActivity" 
             android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
 		<activity android:name="indi.cc.mobilesafe.activity.BlackNumberActivity"></activity>
+		<activity android:name="indi.cc.mobilesafe.activity.AppManagerActivity"></activity>
        	<receiver android:name="indi.cc.mobilesafe.receiver.BootReceiver">
        	    <intent-filter >
        	           <action android:name="android.intent.action.BOOT_COMPLETED"/>	        
