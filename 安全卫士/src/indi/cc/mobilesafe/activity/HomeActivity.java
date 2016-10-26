@@ -75,8 +75,12 @@ public class HomeActivity extends Activity {
 						startActivity(new Intent(getApplicationContext(), BlackNumberActivity.class));
 						break;
 					case 2:
-						//跳转到通信卫士模块
+						//跳转到软件管理模块
 						startActivity(new Intent(getApplicationContext(), AppManagerActivity.class));
+						break;
+					case 3:
+						//跳转到进程管理模块
+						startActivity(new Intent(getApplicationContext(), ProcessManagerActivity.class));
 						break;
 					case 7:
 						//跳转到高级工具功能列表界面
