@@ -44,5 +44,16 @@ public class ConstantValue {
 	 * 左上角的y轴的坐标key
 	 */
 	public static final String LOCATION_Y = "location_y";
+	
+
+	/**
+	 * 是否显示系统进程key
+	 */
+	public static final String SHOW_SYSTEM = "show_system";
+
+	/**
+	 * 是否已有快捷方式key
+	 */
+	public static final String HAS_SHORTCUT = "has_shortcut";
 
 }

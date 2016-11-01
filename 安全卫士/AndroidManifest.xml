@@ -41,13 +41,19 @@
     <uses-permission android:name="android.permission.WRITE_SMS"/>
     <!-- 杀死后台进程权限 -->
      <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"/>
+    <!-- 快捷方式权限 -->
+     <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    
     <application
         android:allowBackup="true"
         android:icon="@drawable/mobilesafe"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
          <uses-library android:name="android.test.runner" />
-        <activity
+      
+         
+        <!-- activity -->
+         <activity
             android:name=".activity.SplashActivity"
             android:label="@string/app_name" >
             <intent-filter>
@@ -56,7 +62,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="indi.cc.mobilesafe.activity.HomeActivity"></activity>
+      
+         <activity android:name="indi.cc.mobilesafe.activity.HomeActivity">
+        	 <intent-filter>
+                <action android:name="android.intent.action.HOME" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity android:name="indi.cc.mobilesafe.activity.SettingActivity"></activity>
        	<activity android:name="indi.cc.mobilesafe.activity.TestActivity"></activity>
        	<activity android:name="indi.cc.mobilesafe.activity.Setup1Activity"></activity>
@@ -72,6 +84,11 @@
 		<activity android:name="indi.cc.mobilesafe.activity.BlackNumberActivity"></activity>
 		<activity android:name="indi.cc.mobilesafe.activity.AppManagerActivity"></activity>
 		<activity android:name="indi.cc.mobilesafe.activity.ProcessManagerActivity"></activity>
+		<activity android:name="indi.cc.mobilesafe.activity.ProcessSettingActivity"></activity>
+		<activity android:name="indi.cc.mobilesafe.activity.CommonNumberQueryActivity"></activity>
+		<activity android:name="indi.cc.mobilesafe.activity.AppLockActivity"></activity>
+		
+		<!-- 广播接受者 -->
        	<receiver android:name="indi.cc.mobilesafe.receiver.BootReceiver">
        	    <intent-filter >
        	           <action android:name="android.intent.action.BOOT_COMPLETED"/>	        
@@ -85,10 +102,27 @@
             </intent-filter>
        	    
        	</receiver>
-     	 
+       	
+     	  <receiver android:name="indi.cc.mobilesafe.receiver.MyAppWidgetProvider" >
+		    <intent-filter>
+		        <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+		    </intent-filter>
+		    <meta-data android:name="android.appwidget.provider"
+		               android:resource="@xml/process_widget_provider" />
+		</receiver>
+		
+     	  <receiver android:name="indi.cc.mobilesafe.receiver.KillProcessReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.KILL_BACKGROUND_PROCESS" />
+            </intent-filter>
+        </receiver>
+       	
+       	<!-- 服务 -->
        	<service android:name="indi.cc.mobilesafe.service.LocationService"></service>
        	<service android:name="indi.cc.mobilesafe.service.AddressService"></service>
      	<service android:name="indi.cc.mobilesafe.service.BlackNumberService"></service>
+     	<service android:name="indi.cc.mobilesafe.service.LockScreenService"></service>
+     	<service android:name="indi.cc.mobilesafe.service.UpdateWidgetService" />
      </application>
 
 </manifest>

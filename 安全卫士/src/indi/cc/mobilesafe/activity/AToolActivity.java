@@ -1,10 +1,11 @@
 package indi.cc.mobilesafe.activity;
 
-import java.io.File;
-
 import indi.cc.mobilesafe.R;
 import indi.cc.mobilesafe.engine.SmsBackUp;
 import indi.cc.mobilesafe.engine.SmsBackUp.CallBack;
+
+import java.io.File;
+
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -18,6 +19,8 @@ import android.widget.TextView;
 public class AToolActivity extends Activity {
 	private TextView tv_query_phone_address,tv_sms_backup;
 	private ProgressBar pb_bar;
+	private TextView tv_commonnumber_query;
+	private TextView tv_app_lock;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -27,6 +30,33 @@ public class AToolActivity extends Activity {
 		initPhoneAddress();
 		//短信备份方法
 		initSmsBackUp();
+		//常用号码查询
+		initCommonNumberQuery();
+		//初始化程序锁
+		initAppLock();
+	}
+
+	private void initAppLock() {
+		tv_app_lock = (TextView) findViewById(R.id.tv_app_lock);
+		tv_app_lock.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				startActivity(new Intent(getApplicationContext(), AppLockActivity.class));
+			}
+		});
+	}
+
+	/**
+	 * //常用号码查询
+	 */
+	private void initCommonNumberQuery() {
+		tv_commonnumber_query = (TextView) findViewById(R.id.tv_commonnumber_query);
+		tv_commonnumber_query.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				startActivity(new Intent(getApplicationContext(), CommonNumberQueryActivity.class));
+			}
+		});
 	}
 
 	/**
