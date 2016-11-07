@@ -3,6 +3,7 @@ package indi.cc.mobilesafe.activity;
 import indi.cc.mobilesafe.R;
 import indi.cc.mobilesafe.service.AddressService;
 import indi.cc.mobilesafe.service.BlackNumberService;
+import indi.cc.mobilesafe.service.WatchDogService;
 import indi.cc.mobilesafe.utils.ConstantValue;
 import indi.cc.mobilesafe.utils.ServiceUtil;
 import indi.cc.mobilesafe.utils.SpUtil;
@@ -37,8 +38,35 @@ public class SettingActivity extends Activity {
 		initLocation();
 		//拦截黑名单短信电话
 		initBlacknumber();
+		//初始化程序锁
+		initAppLock();
 	}
 	
+	/**
+	 * 初始化程序锁方法
+	 */
+	private void initAppLock() {
+		final SettingItemView siv_app_lock = (SettingItemView) findViewById(R.id.siv_app_lock);
+		boolean isRunning = ServiceUtil.isRunning(this, "indi.cc.mobilesafe.service.WatchDogService");
+		siv_app_lock.setCheck(isRunning);
+		
+		siv_app_lock.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				boolean isCheck = siv_app_lock.isCheck();
+				siv_app_lock.setCheck(!isCheck);
+				if(!isCheck){
+					//开启服务
+					startService(new Intent(getApplicationContext(), WatchDogService.class));
+				}else{
+					//关闭服务
+					stopService(new Intent(getApplicationContext(), WatchDogService.class));
+				}
+			}
+		});
+	}
+
+
 	/**
 	 * 拦截黑名单短信电话
 	 */
