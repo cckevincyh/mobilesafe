@@ -82,9 +82,19 @@ public class HomeActivity extends Activity {
 						//跳转到进程管理模块
 						startActivity(new Intent(getApplicationContext(), ProcessManagerActivity.class));
 						break;
+					case 4:
+						//跳转到流量管理模块
+						startActivity(new Intent(getApplicationContext(), TrafficActivity.class));
+						break;
 					case 5:
 						//跳转到手机杀毒模块
 						startActivity(new Intent(getApplicationContext(), AnitVirusActivity.class));
+						break;
+					case 6:
+						//跳转到清理缓存模块
+//						startActivity(new Intent(getApplicationContext(), CacheClearActivity.class));
+						startActivity(new Intent(getApplicationContext(), BaseCacheClearActivity.class));
+						
 						break;
 					case 7:
 						//跳转到高级工具功能列表界面

@@ -107,6 +107,7 @@ public class SplashActivity extends Activity {
 	        setContentView(R.layout.activity_splash);
 	        //去除掉当前activity头title
 //	        requestWindowFeature(Window.FEATURE_NO_TITLE);
+	        
 	        //初始化UI
 	        initUI();
 	        //初始化数据

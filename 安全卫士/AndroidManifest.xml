@@ -45,8 +45,17 @@
      <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
      <!-- 获取任务栈权限 -->
          <uses-permission android:name="android.permission.GET_TASKS"/>
+         <!-- 获取应用缓存大小 -->
+           <uses-permission android:name="android.permission.GET_PACKAGE_SIZE" />
+           <!-- 清除所有app的缓存 -->
+    <uses-permission android:name="android.permission.CLEAR_APP_CACHE" />
+    <!-- root手机 -->
+    <!-- 清除单个应用缓存，需要root -->
+    <!-- <uses-permission android:name="android.permission.DELETE_CACHE_FILES" /> -->
+         
     
     <application
+        android:name="indi.cc.mobilesafe.global.MyApplication"
         android:allowBackup="true"
         android:icon="@drawable/mobilesafe"
         android:label="@string/app_name"
@@ -96,6 +105,10 @@
 		<activity android:name="indi.cc.mobilesafe.activity.CommonNumberQueryActivity"></activity>
 		<activity android:name="indi.cc.mobilesafe.activity.AppLockActivity"></activity>
 		<activity android:name="indi.cc.mobilesafe.activity.AnitVirusActivity"></activity>
+		<activity android:name="indi.cc.mobilesafe.activity.TrafficActivity"></activity>
+		<activity android:name="indi.cc.mobilesafe.activity.BaseCacheClearActivity"></activity>
+		<activity android:name="indi.cc.mobilesafe.activity.CacheClearActivity"></activity>
+		<activity android:name="indi.cc.mobilesafe.activity.SDCacheClearActivity"></activity>
 		
 		<!-- 广播接受者 -->
        	<receiver android:name="indi.cc.mobilesafe.receiver.BootReceiver">
